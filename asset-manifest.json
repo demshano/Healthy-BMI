@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/Healthy-BMI/static/css/main.dde73fb7.css",
+    "main.js": "/Healthy-BMI/static/js/main.33509fbd.js",
+    "index.html": "/Healthy-BMI/index.html",
+    "main.dde73fb7.css.map": "/Healthy-BMI/static/css/main.dde73fb7.css.map",
+    "main.33509fbd.js.map": "/Healthy-BMI/static/js/main.33509fbd.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.dde73fb7.css",
+    "static/js/main.33509fbd.js"
+  ]
+}
