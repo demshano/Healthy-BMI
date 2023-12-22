@@ -1,5 +1,17 @@
-.headerText{
+.fontFamily{
     font-family: 'Anton', sans-serif;
 font-family: 'Saira Stencil One', sans-serif;
 font-family: 'Ubuntu', sans-serif;
+}
+
+.bgColor{
+    background: linear-gradient(to left, #135b8a 10%, #8e44ad 50%, #682385 90%);
+}
+
+/* Style for the increment and decrement buttons */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: auto;
+  margin: 0;
+  
 }

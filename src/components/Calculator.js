@@ -1,5 +1,6 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import {BmiDetails} from './BmiDetails';
+import Typed from 'typed.js';
 import '../App.css';
 
 export const Calculator = () => {
@@ -20,42 +21,76 @@ export const Calculator = () => {
     setBMI(null);
   }
 
+  const bmiRef = useRef(null);
+
+  useEffect(() => {
+    // Options for the Typed.js instance
+    const options = {
+      strings: ['BMI'],
+      typeSpeed: 400,  // Typing speed in milliseconds
+      backSpeed: 150,  // Backspacing speed in milliseconds
+      loop: true,     // Loop the animation
+      showCursor: false,
+    };
+
+    // Initialize Typed.js
+    const typed = new Typed(bmiRef.current, options);
+
+    // Cleanup function to destroy Typed.js when the component unmounts
+    return () => {
+      typed.destroy();
+    };
+  }, []);
+
   return (
     <div>
 
-      <h1 className='headerText flex justify-center items-center py-4 font-bold text-8xl'>HEALTHY BMI</h1>
+      {/* <h1 className='headerText flex justify-center items-center py-4 font-bold text-8xl'>HEALTHY BMI</h1> */}
+      <h1 className='fontFamily flex justify-center items-center py-4 font-bold text-8xl'>
+      HEALTHY <span className='mx-4 text-white' ref={bmiRef} />
+    </h1>
 
-    <div className='flex justify-center items-center mt-12'>
+    <div className='flex justify-center items-center mt-12  text-center'>
         <div className=''>
 
             <div className='flex flex-col'>
-                <label>
-                    Height (cm):
-                </label>
-                <input type="number" value={height} onChange={(e) => setHeight(e.target.value)} />
+
+                <div className='flex items-center'>
+                    <label className='text-3xl fontFamily'>Height</label>
+                    <span>(cm)</span>
+                </div>
+                     
+                <input className='border-none outline-none bg-transparent  focus:border-blue-500 p-2 text-gray-700' style={{ borderBottom: '1px solid black' }} type="number" value={height} onChange={(e) => setHeight(e.target.value)} />
+                 
             </div>
 
             <div className='flex flex-col'>
-                <label>
-                    Weight (kg):
-                </label>
-                    <input type="number" value={weight} onChange={(e) => setWeight(e.target.value)} />
+
+                <div className='flex items-center'>
+                    <label  className='text-3xl fontFamily'>Weight</label>
+                    <span>(kg)</span>
+                </div>
+                    
+            
+                    <input className='border-none outline-none bg-transparent  focus:border-blue-500 p-2 text-gray-700' style={{ borderBottom: '1px solid black' }} type="number" value={weight} onChange={(e) => setWeight(e.target.value)} />
             </div>
 
             <div>
-                <button onClick={calculateBMI}>Calculate BMI</button>
+                <button className='bgColor fontFamily rounded-md px-8 py-2' onClick={calculateBMI}>Calculate BMI</button>
             </div>
 
-            <div>
-                {bmi !== null && <BmiDetails bmi={bmi} />}
-            </div>
 
             <div>
-                <button onClick={handleReset}>Reset</button>
+                <button className='text-2xl text-gray-400' onClick={handleReset}>Reset</button>
             </div>
 
             </div>
         </div>
+
+            
+            <div>
+                {bmi !== null && <BmiDetails bmi={bmi} />}
+            </div>
 
     </div>
   );
