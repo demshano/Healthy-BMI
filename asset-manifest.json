@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/Healthy-BMI/static/css/main.dde73fb7.css",
-    "main.js": "/Healthy-BMI/static/js/main.33509fbd.js",
+    "main.css": "/Healthy-BMI/static/css/main.9891bec7.css",
+    "main.js": "/Healthy-BMI/static/js/main.d961a49a.js",
     "index.html": "/Healthy-BMI/index.html",
-    "main.dde73fb7.css.map": "/Healthy-BMI/static/css/main.dde73fb7.css.map",
-    "main.33509fbd.js.map": "/Healthy-BMI/static/js/main.33509fbd.js.map"
+    "main.9891bec7.css.map": "/Healthy-BMI/static/css/main.9891bec7.css.map",
+    "main.d961a49a.js.map": "/Healthy-BMI/static/js/main.d961a49a.js.map"
   },
   "entrypoints": [
-    "static/css/main.dde73fb7.css",
-    "static/js/main.33509fbd.js"
+    "static/css/main.9891bec7.css",
+    "static/js/main.d961a49a.js"
   ]
 }
